@@ -1,0 +1,48 @@
+{
+  "name": "uk-recruitment-job-scraper",
+  "version": "1.0.0",
+  "description": "Legal/public-data UK recruitment job scraper starter with status reporting, safe fallbacks, Reed API, Crawlee, Playwright, and Cheerio.",
+  "type": "module",
+  "scripts": {
+    "scrape": "tsx src/scrape.ts",
+    "test:ai": "tsx src/ai/titleExpander.ts",
+    "test:hays-ai": "tsx src/scrape.ts --site=hays --title=\"Digital Marketing\" --days=30 --location=\"United Kingdom\" --aiExpand=true --maxPages=2",
+    "test:all-ai": "tsx src/scrape.ts --all --title=\"Digital Marketing\" --days=30 --location=\"United Kingdom\" --aiExpand=true --maxPages=1",
+    "dashboard": "npm run dashboard --prefix src/dashboard/client",
+    "dashboard:build": "npm run build --prefix src/dashboard/client",
+    "dashboard:server": "tsx src/dashboard/server.ts",
+    "dashboard:dev": "vite --config src/dashboard/vite.config.ts",
+    "crawl": "tsx src/main.ts",
+    "reed": "tsx src/adapters/reed.adapter.ts",
+    "export": "tsx src/exportExcel.ts",
+    "dedupe": "tsx src/dedupe.ts",
+    "discover": "tsx src/core/networkDiscovery.ts",
+    "test:cvlibrary": "tsx src/scrape.ts --site=cvlibrary --title=\"Digital Marketing Consultant\" --days=7 --location=\"United Kingdom\" --maxPages=1",
+    "test:hays": "tsx src/scrape.ts --site=hays --title=\"Digital Marketing Consultant\" --days=7 --location=\"United Kingdom\" --maxPages=2",
+    "test:all": "tsx src/scrape.ts --all --title=\"Digital Marketing Consultant\" --days=7 --location=\"United Kingdom\" --maxPages=1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "cheerio": "^1.0.0",
+    "crawlee": "^3.15.0",
+    "dotenv": "^16.4.7",
+    "fast-csv": "^5.0.2",
+    "lucide-react": "^1.14.0",
+    "minimist": "^1.2.8",
+    "ollama": "^0.6.3",
+    "pdf-parse": "^2.4.5",
+    "playwright": "^1.49.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "vite": "^8.0.11",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

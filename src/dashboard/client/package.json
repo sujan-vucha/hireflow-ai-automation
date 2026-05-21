@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dashboard": "npm run build && npm run dashboard:server --prefix ../../..",
+    "build": "vite build --config ../vite.config.ts"
+  }
+}
